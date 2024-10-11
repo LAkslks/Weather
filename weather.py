@@ -4,7 +4,7 @@ from aiogram import Bot, Dispatcher, types, F
 from aiogram.filters import Command
 
 
-TOKEN = '7897107338:AAHgUpNXW_c3nByTTg1FOb3Gd5vMUvlaR7o'
+TOKEN = 'TOKEN'
 
 bot = Bot(token=TOKEN)
 dp = Dispatcher()
@@ -16,7 +16,7 @@ async def start_command(message: types.Message):
 @dp.message(F.text)
 async def get_weather(message: types.Message):
     city = message.text
-    API_key='28fa51ea5574f794fa9f0e36146efb9b'
+    API_key='KEY'
     url = f'https://api.openweathermap.org/data/2.5/weather?q={city}&appid={API_key}&units=metric'
     try:
         async with aiohttp.ClientSession() as session:
